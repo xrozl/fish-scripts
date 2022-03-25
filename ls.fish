@@ -6,12 +6,21 @@ function la
     command ls -A
 end
 
+# use exa
 function ll
-    command ls -l
+    if type -q exa
+        command exa -l -g --icons
+    else
+        command ls -l
+    end
 end
 
 function lla
-    command ls -lA
+    if type -q exa
+        command exa -l -g -a --icons
+    else
+        command ls -la
+    end
 end
 
 # like windows command prompt
